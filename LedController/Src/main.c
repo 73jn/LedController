@@ -23,7 +23,8 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "xf/xf.h"
+#include "app/factory.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -92,7 +93,10 @@ int main(void)
   MX_GPIO_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
-
+  XF_initialize(10);
+  Factory_initialize();
+  Factory_build();
+  XF_exec();
   /* USER CODE END 2 */
 
   /* Infinite loop */
